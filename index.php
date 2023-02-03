@@ -16,6 +16,13 @@ class Movie
         $this->durata = $_durata;
         $this->regista = $_regista;
     }
+
+    public function getAge()
+    {
+        $currentYear = date("Y");
+        $age = $currentYear - $this->anno;
+        return $age;
+    }
 }
 
 $movie1 = new Movie('La Haine', 'Francia', '1995', '95 minuti', 'Mathieu Kassovitz');
@@ -44,6 +51,7 @@ $movie2 = new Movie('Inglourious Basterds', 'USA, Germania', '2009', '153 minuti
             <h3><?php echo $movie1->anno ?></h3>
             <h3><?php echo $movie1->durata ?></h3>
             <h3><?php echo $movie1->regista ?></h3>
+            <h3>L'età del film è : <?php echo $movie1->getAge(); ?></h3>
         </div>
         <div class="film-2 pt-5">
             <h1><?php echo $movie2->titolo; ?> </h1>
@@ -51,6 +59,7 @@ $movie2 = new Movie('Inglourious Basterds', 'USA, Germania', '2009', '153 minuti
             <h3><?php echo $movie2->anno ?></h3>
             <h3><?php echo $movie2->durata ?></h3>
             <h3><?php echo $movie2->regista ?></h3>
+            <h3>L'età del film è : <?php echo $movie2->getAge(); ?></h3>
 
         </div>
 
